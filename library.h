@@ -23,8 +23,17 @@ class Matrixf {
   [[nodiscard]] VectorType data();
   [[nodiscard]] VectorType row(size_t index);
 
+  [[nodiscard]] Matrixf GetEchelonForm();
+  [[nodiscard]] Matrixf GetRREchelonForm();
+
+  void Debug();
+
  private:
   Matrixf(VectorType&& data, size_t rows, size_t columns);
+
+  void MultiplyRow(size_t row, double factor);
+  void SubtractRowFromRow(size_t dest_row, size_t source_row, double factor);
+  void SwapRows(size_t row1, size_t row2);
 
   VectorType data_;
   size_t columns_;
