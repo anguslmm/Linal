@@ -32,10 +32,14 @@ Matrixf::VectorType Matrixf::column(size_t index) {
   return res;
 }
 
+Matrixf::VectorType Matrixf::data() {
+  return data_;
+}
+
 Matrixf::VectorType Matrixf::row(size_t index) {
   VectorType res(columns_);
 
-  std::copy(data_.begin() + index, data_.begin() + index + columns_, res.begin());
+  std::copy(data_.begin() + index * columns_, data_.begin() + index * columns_ + columns_, res.begin());
 
   return res;
 }

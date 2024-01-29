@@ -20,6 +20,7 @@ class Matrixf {
 
   [[nodiscard]] UnitType at(size_t row, size_t column);
   [[nodiscard]] VectorType column(size_t index);
+  [[nodiscard]] VectorType data();
   [[nodiscard]] VectorType row(size_t index);
 
  private:
